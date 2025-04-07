@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-def home(request):
-    context = {'message': 'Hello from Django!'}
-    return render(request, 'index.html', context)
+def home(request): 
+    return render(request, 'google.html')
 
 def text_input_view(request):
     if request.method == 'POST':
@@ -13,8 +12,7 @@ def text_input_view(request):
     
     return render(request, 'input_form.html')
 
-def google_view(request): 
-    return render(request, 'google.html')
+
 
 def sign_in_view(request): 
     email = request.POST.get('email','')
