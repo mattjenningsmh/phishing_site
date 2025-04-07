@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Input Page</title>
+</head>
+<body>
+    <h1>Enter Two Pieces of Text</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="text1">Text 1:</label>
+        <input type="text" id="text1" name="text1"><br><br>
+
+        <label for="text2">Text 2:</label>
+        <input type="text" id="text2" name="text2"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if text1 or text2 %}
+        <h2>You entered:</h2>
+        <p><strong>Text 1:</strong> {{ text1 }}</p>
+        <p><strong>Text 2:</strong> {{ text2 }}</p>
+    {% endif %}
+</body>
+</html>

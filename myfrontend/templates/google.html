@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    </div>
+    <!-- Sign In Button -->
+    <div class="signin-container">
+        <a href="{% url 'sign_in' %}">
+            <button class="signin-btn">Sign In</button>
+        </a>
+    </div>
+
+
+    <div class="container">
+        <img class="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+
+        <form class="search-form" action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" class="search-box" autocomplete="off">
+            <div class="buttons">
+                <input type="submit" value="Google Search" class="btn">
+                <input type="submit" value="I'm Feeling Lucky" name="btnI" class="btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
